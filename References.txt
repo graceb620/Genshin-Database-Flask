@@ -1,0 +1,14 @@
+References.txt
+@author Grace Bero
+
+Desc: This is a doc that shares all of the resources that I used
+
+Styling for the HTML documents
+    https://chat.openai.com/share/4e412135-1b1f-4d4d-bb90-d705472d6d0f
+Creating the navigation bar for the HTML documents
+    https://chat.openai.com/share/31c6bdd4-b5dd-4d41-b1bd-48606a43dd6a
+Getting the columns to be side by side and helping to connect my dynamoDB to the program
+    https://chat.openai.com/share/128f1e10-6a64-4e55-bca0-225070b9400e
+Fixing my Delete_item() code
+    https://chat.openai.com/share/f3eba94d-02c5-403d-ac71-1773a52bb61e
+    https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.UpdateExpressions.html

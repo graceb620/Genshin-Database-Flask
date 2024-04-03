@@ -1,0 +1,230 @@
+<!-- 
+manageLocker.html
+Name: Grace Bero
+
+Description: Creates the Manage Locker page 
+-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Genshin Database</title>
+        <!-- 
+        Makes the page look nicer
+        References: Used ChatGPT to help with the stylings and making the page look nicer aesthetically 
+        Check the References.txt for those chats
+        -->
+        <style>
+        body {
+            text-align: center;
+            background-image: url(https://pbs.twimg.com/media/FzTu2ziXsAIY_g2.jpg:large);
+            background-size: cover; /* Ensure the background image covers the entire body */
+            background-position: center; /* Center the background image */
+            color: white; /* Set text color to white */
+        }
+
+        /* Styling for header */
+        h1 {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 10px; /* Add padding for better appearance */
+            border-radius: 10px; /* Add border radius for rounded corners */
+        }
+
+        /* Styling for paragraph */
+        p {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 10px; /* Add padding for better appearance */
+            border-radius: 5px; /* rounded corners */
+        }
+        
+        h2 {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 10px; /* Add padding for better appearance */
+            border-radius: 10px; /* Add border radius for rounded corners */
+        }
+        form {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 10px; /* Add padding for better appearance */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            margin-top: 20px;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        /* Styling for buttons */
+        .button-container button {
+            padding: 10px 20px; /* Add padding to make buttons more clickable */
+            background-color: #4CAF50; /* Green background color */
+            color: white; /* White text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* rounded corners */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            transition: background-color 0.3s; /* Add smooth transition effect */
+            margin: 0 10px;
+        }
+
+        /* Hover effect */
+        .button-container button:hover {
+            background-color: #45a049; /* Darker green color on hover */
+        }
+        /* Dropdown Button */
+        .dropbtn {
+          background-color: transparent;
+          color: black;
+          padding: 8px;
+          font-size: 16px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        /* Dropdown Content (Hidden by Default) */
+        .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+        
+        /* Links inside the dropdown */
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+        }
+        
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+        
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {display: block;}
+        
+        /* Change the background color of the dropdown button when the dropdown content is shown */
+        .dropdown:hover .dropbtn {background-color: #f9f9f9;}
+        
+        .column {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+    </style>
+</head>
+
+<!-- All visible content on website -->
+<body>
+    <h1>Manage Locker</h1>
+    
+    <!-- 
+    Navigation Bar
+    
+    Desc: Used to navigate to other pages on the website 
+    -->
+    <div class="button-container">
+        <a href="http://54.237.173.31:8080"><button>Home</button></a> <!-- Home -->
+        <a href="http://54.237.173.31:8080/database"><button>Database</button></a> <!-- Database -->
+        <!-- A dropdown menu from the Users button for related subpages -->
+        <div class="dropdown">
+            <a href="http://54.237.173.31:8080/users"><button class="dropbtn">Users</button></a> <!-- Users -->
+            <!-- The dropdown buttons -->
+            <div class="dropdown-content">
+                <a href="http://54.237.173.31:8080/users/manage">Manage Users</a> <!-- Manage Users -->
+            </div>
+        </div>
+        <!-- A dropdown menu from the My Locker button for related subpages -->
+        <div class="dropdown">
+            <a href="http://54.237.173.31:8080/locker"><button class="dropbtn">My Locker</button></a> <!-- My Locker -->
+            <!-- The dropdown buttons -->
+            <div class="dropdown-content">
+                <a href="http://54.237.173.31:8080/locker/manage">Manage Locker</a> <!-- Manage Locker -->
+            </div>
+        </div>
+        <a href="http://54.237.173.31:8080/about"><button>About Me!</button></a> <!-- About Me -->
+    </div>
+    
+    <!-- Creates the columns with the Create/Delete character/weapon forms -->
+    <div class="row">
+        <!-- Characters -->
+        <div class="column">
+            <h2>Manage Characters</h2>
+            <!-- Add Form -->
+            <form method="post">
+                <p>Add Character</p> 
+                <label>Username: </label>
+                <input name="username" required><br>
+                <label>Character Name: </label>
+                <input name="AddCharacter"><br>
+                <input type="submit">
+            </form>
+            <!-- 
+            This creates the Message under the add character form
+            The "AddCharMsg" is the id that will be used as the variable name to insert stuff into this area on page
+            -->
+            <p id="AddCharMsg">
+                {{ AddCharMsg|safe }} <!-- Tells html that this is from a trusted source -->
+            </p>
+            <!-- Delete Form -->
+            <form method="post">
+                <p>Delete Character</p>
+                <label>Username: </label>
+                <input name="username" required><br>
+                <label>Character Name: </label>
+                <input name="DeleteCharacter">
+                <br>
+                <input type="submit">
+            </form>
+            <!-- 
+            This creates the Message under the delete character form
+            The "DelCharMsg" is the id that will be used as the variable name to insert stuff into this area on page
+            -->
+            <p id="DelCharMsg">
+                {{ DelCharMsg|safe }} <!-- Tells html that this is from a trusted source -->
+            </p>
+        </div>
+        
+        <!-- Weapons -->
+        <div class="column">
+            <h2>Manage Weapons</h2>
+            <!-- Add -->
+            <form method="post">
+                <p>Add Weapon</p>
+                <label>Username: </label>
+                <input name="username" required><br>
+                <label>Weapon Name: </label>
+                <input name="AddWeapon"><br>
+                <input type="submit">
+            </form>
+            <!-- 
+            This creates the Message under the form
+            The "AddWeaponMsg" is the id that will be used as the variable name to insert stuff into this area on page
+            -->
+            <p id="AddWeaponMsg">
+                {{ AddWeaponMsg|safe }} <!-- Tells html that this is from a trusted source -->
+            </p>
+            <!-- Delete -->
+            <form method="post">
+                <p>Delete Weapon</p>
+                <label>Username: </label>
+                <input name="username" required><br>
+                <label>Weapon Name: </label>
+                <input name="DeleteWeapon"><br>
+                <input type="submit">
+            </form>
+            <!-- 
+            This creates the Message under the form
+            The "DelWeaponMsg" is the id that will be used as the variable name to insert stuff into this area on page
+            -->
+            <p id="DelWeaponMsg">
+                {{ DelWeaponMsg|safe }} <!-- Tells html that this is from a trusted source -->
+            </p>
+        </div>
+    </div>
+</body>
+</html>
