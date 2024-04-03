@@ -5,7 +5,7 @@ FlaskApp.py
 Desc: This is the page that runs the website
 Just click Run and the ip will be up and running
 
-IP: 54.237.173.31:8080
+IP: ip
 """
 
 from flask import Flask
