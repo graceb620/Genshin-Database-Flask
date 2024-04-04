@@ -1,8 +1,9 @@
 # Genshin Database 
 This is a project that was done for my midterm project in Cloud and Database Systems (CS178) at Drake University.  
+I have removed all of the sensitive information in many of the docs such as the ip's and the connections to the databases and replaced them with placeholders  
 
 ## Navigating the files
-* WIP
+* 
 
 ## The Goal
 * Create a new IAM user, Cloud9 EC2 instance, and an RDS instance in AWS
