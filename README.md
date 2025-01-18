@@ -2,9 +2,6 @@
 This is a project that was done for my midterm project in Cloud and Database Systems (CS178) at Drake University.  
 I have removed all of the sensitive information in many of the docs such as the ip's and the connections to the databases and replaced them with placeholders  
 
-## Navigating the files
-* 
-
 ## The Goal
 * Create a new IAM user, Cloud9 EC2 instance, and an RDS instance in AWS
 * Create a flask website that runs out of the EC2 instance. I also created an elastic IP, so that the IP wouldn't change for creating buttons that led to other pages.
